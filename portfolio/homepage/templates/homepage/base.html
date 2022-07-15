@@ -8,15 +8,17 @@
         <meta name="Description" content="Bienvenue sur mon portfolio! Je suis Loïc Calcagno, full stack développeur junior. Découvre mon univers à travers ce portfolio. ">
         <title>Portfolio | Loïc Calcagno</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+        <link rel="icon" href="{% static 'homepage/img/favicon.png' %}">
     </head>
+
     <body>
         <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="Open()">
            <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
         </span>
         <header class="sidebar fixed top-0 bottom-0 lg:left-0 left-[-300px] p-2 w-[300px] overflow-y-auto text-center bg-gray-900 rounded-r">
             <div class="text-gray-100 text-xl">
-                <div class="p-2.5 mt-1 flex items-center">
-                    <h1 class="font-bold text-gray-200 text-[25px] ml-3 mb-5">Loïc Calcagno </h1>
+                <div class="p-2.5 mt-1 flex text-center items-center">
+                    <h1 class="font-bold text-gray-200 text-[25px] ml-3 mb-5 ">Loïc Calcagno </h1>
                     <i class="bi bi-x ml-[50px] cursor-pointer lg:hidden" onclick="Open()"></i>
                 </div>
                 <div>
@@ -27,12 +29,12 @@
                     <p class="mt-[20px] p-2 hover:bg-gray-400"><a href="{% url 'accueil' %}">A propos de moi</a></p>
                     <p class="mt-[20px] p-2 hover:bg-gray-400"><a href="">Mes projets</a></p>
                     <p class="mt-[20px] p-2 hover:bg-gray-400"><a href="">Contact</a></p>
-                    <button class="mt-[20px] p-2 bg-gray-600 hover:bg-gray-400">Télécharger mon CV</button>
+                    <a href="{% static 'homepage/CV_Loïc_Calcagno.pdf' %}" target="_blank"><p class="mt-[20px] p-2 bg-gray-600 hover:bg-gray-400">Télécharger mon CV</p></a>
                 </div>
             </div>
         </header>
 
-        <div class="lg:ml-[300px] pt-[75px] pl-7 lg:p-7 lg:pl-[100px] h-screen">
+        <div class="lg:ml-[300px] pt-[75px] pl-7 lg:p-7 lg:pl-[100px] lg:pr-[100px] h-screen">
            <main class="">
             {% block content %}
             {% endblock %}
@@ -40,7 +42,7 @@
 
             <div class="fixed lg:bottom-5 bg-gray-100 p-5 sticky top-[100vh]">
                 <footer class="text-center">
-                    <h2>Portfolio réalisé par <a href="">@CalcagnoLoic</a></h2>
+                    <h2>Portfolio réalisé par <a href="https://github.com/CalcagnoLoic/portfolio_v2" target="_blank">@CalcagnoLoic</a></h2>
                 </footer>
             </div>
 
