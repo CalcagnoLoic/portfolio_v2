@@ -1,7 +1,18 @@
 {% extends 'homepage/base.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1>test</h1>
+            <h1 class="text-xl">Bienvenue sur mon portfolio</h1>
+
+            <h2 class="text-4xl pt-5 pb-5">Je suis développeur full stack junior</h2>
+
+            <div class="grid lg:grid-cols-2">
+                <div class="text-justify">
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+                </div>
+                <img src="{% static 'homepage/img/icon_fullstack.png' %}" alt="fullstack developper" class="w-[50%] ml-[25%] pb-5">
+            </div>
+
+<h3>N'hésitez pas à visiter mes réseaux : </h3>
 
 {% endblock %}
