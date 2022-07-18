@@ -20,5 +20,8 @@ from homepage import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.accueil, name="accueil")
+    path("", views.accueil, name="accueil"),
+    path("contact", views.contact, name="contact"),
+    path("email-envoyé", views.email_send, name="email_send"),
+    path("mes-projets", views.projet, name="project")
 ]
