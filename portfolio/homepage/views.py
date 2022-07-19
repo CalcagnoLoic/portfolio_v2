@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+
 from homepage import forms
+from homepage.models import AddProjects
 
 
 def accueil(request):
@@ -30,4 +32,6 @@ def email_send(request):
 
 
 def projet(request):
-    return render(request, "homepage/projets.html")
+    projects = AddProjects.objects.order_by('-id')
+    return render(request, "homepage/projets.html",
+                  {'projects': projects})

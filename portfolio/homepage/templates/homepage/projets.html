@@ -2,10 +2,29 @@
 
 {% block content %}
 
-            <h1 class="text-3xl mb-5">Restons en contact!</h1>
+            <h1 class="text-3xl mb-[50px]">Mes projets</h1>
 
-            <h2 class="text-2xl mb-5">Votre message a bien été envoyé!</h2>
-
-            <a href="{% url 'accueil' %}"><p>Retour sur l'accueil du portfolio</p></a>
+            {% for projets in projects %}
+            <div class="lg:flex mb-[50px] gap-5">
+                <div>
+                    <a href="{{projets.link_projet}}" target="_blank"><img src="{{projets.image.url}}" alt="Aperçu du projet" class="w-[150vh] rounded border"></a>
+                </div>
+                <div>
+                    <h2 class="text-2xl italic mb-4">{{projets.titre}}</h2>
+                    <h3 class="text-xl mb-4">{{projets.description}}</h3>
+                    <div class="flex gap-5 mb-6">
+                        <img src="{{projets.langage1.url}}" alt="Langage utilisé" class="h-[45px] w-[45px]">
+                        <img src="{{projets.langage2.url}}" alt="Langage utilisé" class="h-[45px] w-[45px]">
+                        {% if projets.langage3 %}
+                        <img src="{{projets.langage3.url}}" alt="Langage utilisé" class="h-[45px] w-[45px]">
+                        {% endif %}
+                        {% if projets.langage4 %}
+                        <img src="{{projets.langage4.url}}" alt="Langage utilisé" class="h-[45px] w-[45px]">
+                        {% endif %}
+                    </div>
+                    <a href="{{projets.repository}}" >Github</a>
+                </div>
+            </div>
+            {% endfor %}
 
 {% endblock %}
