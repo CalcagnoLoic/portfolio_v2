@@ -7,7 +7,7 @@
             {% for projets in projects %}
             <div class="lg:flex mb-[50px] gap-5">
                 <div>
-                    <a href="{{projets.link_projet}}" target="_blank"><img src="{{projets.image.url}}" alt="Aperçu du projet" class="w-[150vh] rounded border"></a>
+                    <a href="{{projets.link_projet}}" target="_blank"><img src="{{projets.image.url}}" alt="Aperçu du projet" class="w-[150vh] rounded border transition ease-in-out hover:scale-105 duration-1000"></a>
                 </div>
                 <div>
                     <h2 class="text-2xl italic mb-4">{{projets.titre}}</h2>
@@ -22,7 +22,7 @@
                         <img src="{{projets.langage4.url}}" alt="Langage utilisé" class="h-[45px] w-[45px]">
                         {% endif %}
                     </div>
-                    <a href="{{projets.repository}}" >Github</a>
+                    <a href="{{projets.repository}}" target="_blank" class="bg-gray-600 p-2 rounded mb-5 hover:bg-gray-500 text-white ">Github &#x2794; </a>
                 </div>
             </div>
             {% endfor %}
