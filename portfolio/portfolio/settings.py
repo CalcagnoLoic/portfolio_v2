@@ -41,11 +41,17 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_tailwind',
     'simple_mail',
+    'ckeditor',
+    'modeltranslation',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
+
+SIMPLE_MAIL_USE_CKEDITOR = True
+
+SIMPLE_MAIL_USE_MODELTRANSLATION = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -137,10 +143,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your@djangoapp.com'
-EMAIL_HOST_PASSWORD = 'your-email account-password'
-EMAIL_USE_SSL = False
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

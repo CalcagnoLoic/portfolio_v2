@@ -13,6 +13,12 @@ def contact(request):
     if request.method == 'POST':
         form = forms.ContactForm(request.POST)
         if form.is_valid():
+            send_mail(
+                subject=form.cleaned_data['name'] ,
+                message=form.cleaned_data['message'],
+                from_email=form.cleaned_data['email'],
+                recipient_list=["exemple@gmail.be"]
+            )
             return redirect("email_send")
     else:
         form = forms.ContactForm()
